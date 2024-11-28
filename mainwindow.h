@@ -17,6 +17,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void buttonClicked();
+    void searchClicked();
+
 private:
     Ui::MainWindow *ui;
 };
