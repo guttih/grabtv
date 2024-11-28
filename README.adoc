@@ -2,6 +2,12 @@
 IPTV client to download, search and play movies and TV series
 
 ## Introduction into development thoughts on project start
+<<<<<<< HEAD
+=======
+
+I want to create a qt 6, GUI application which shall work on windows, rocky linux and ubuntu.  I will be using git and I would like to provide an easy installation for each user, as we all know windows users want easy installation.  The app will be a iptv player, which will download a playlist and move it's information into an sql database.  So I would like an a cross-os database.  In the beginning I will not be playing the videos, I will be using a third-party player f.exampl vlc.  Can you help me with a hello world for such application.  With inferences on the installation for the 3 OS.  and for other linux os, we will provide information on how the user can build for it him self.  I would like to use windeployqt for windows and AppImage for linux if possible.
+
+>>>>>>> cf4cf83 (readme)
 
 ## Prerequisite 
 
