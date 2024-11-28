@@ -2,9 +2,6 @@
 IPTV client to download, search and play movies and TV series
 
 
-
-
-
 ## Prerequisite 
 
 This application supported Operating Systems
