@@ -1,8 +1,9 @@
 # grabtv
 IPTV client to download, search and play movies and TV series
 
+## Introduction into development thoughts on project start
 
-
+I want to create a qt 6, GUI application which shall work on windows, rocky linux and ubuntu.  I will be using git and I would like to provide an easy installation for each user, as we all know windows users want easy installation.  The app will be a iptv player, which will download a playlist and move it's information into an sql database.  So I would like an a cross-os database.  In the beginning I will not be playing the videos, I will be using a third-party player f.exampl vlc.  Can you help me with a hello world for such application.  With inferences on the installation for the 3 OS.  and for other linux os, we will provide information on how the user can build for it him self.  I would like to use windeployqt for windows and AppImage for linux if possible.
 
 
 ## Prerequisite 
@@ -12,3 +13,59 @@ This application supported Operating Systems
  * Windows 11
  * Rocky Linux release 9.4
  * Ubuntu 22.04.5 LTS
+
+ For other linux distributions, you can build the application from source code.
+
+ ## Deployment
+
+### Windows
+
+When building and deploying the application on Windows, we use `windeployqt` 
+to deploy the application. 
+
+We do that by running the following command in the terminal:
+
+[source,bash]
+windeployqt --release --no-translations --no-angle --no-opengl-sw --no-system-d3d-compiler --no-compiler-runtime --no-webkit2 --no-qml-debug grabtv.exe
+
+
+### Rocky Linux
+
+When building and deploying the application on Rocky Linux, we use `AppImage`
+
+We do that by running the following command in the terminal:
+
+[source,bash]
+appimagetool grabtv.AppDir grabtv.AppImage
+
+### Ubuntu
+
+When building and deploying the application on Ubuntu, we use `AppImage`
+
+We do that by running the following command in the terminal:
+
+[source,bash]
+appimagetool grabtv.AppDir grabtv.AppImage
+
+
+
+
+
+## Installation
+
+### Windows
+
+To install the application on Windows, download the installer from the website and run it.
+
+### Rocky Linux
+
+To install the application on Rocky Linux, download the AppImage from the website and run it.
+
+### Ubuntu
+
+To install the application on Ubuntu, download the AppImage from the website and run it.
+
+
+
+
+
