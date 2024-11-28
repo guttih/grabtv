@@ -1,10 +1,5 @@
 :doctype: book
 :encoding: utf-8
-:lang: en
-:toc: left
-:toc-title: Table of Contents
-:toclevels: 3
-:numbered:
 :experimental:
 :xrefstyle: short
 :imagesdir: images
@@ -12,8 +7,6 @@
 :system-name: Grab TV
 :stylesdir: ../styles
 :stylesheet: style.css
-
-== Git workflow
 
 When working with the Grab TV repository, it is important to follow the instructions described in this document. This helps keep the repository in a consistent state and ensures changes are properly reviewed before being merged into the main branch.
 
@@ -26,14 +19,14 @@ When working with the Grab TV repository, it is important to follow the instruct
 [source,shell]
 ----
 git fetch
-git checkout -b <type>-<number>-<title> origin/master
+git checkout -b <type>-<number>-<title> origin/main
 ----
 .. For example, a feature with Id *12* and title *Search title in specific playlist* would be created as follows:
 +
 [source,shell]
 ----
 git fetch
-git checkout -b feature-12-search-title-in-specific-playlist origin/master
+git checkout -b feature-12-search-title-in-specific-playlist origin/main
 ----
 
 === Making changes

@@ -53,6 +53,6 @@ appimagetool grabtv.AppDir grabtv.AppImage
 
 
 
-
+== Git workflow
 
 include::developmentGit.adoc[]

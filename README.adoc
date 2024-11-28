@@ -1,9 +1,7 @@
-# grabtv
+= grabtv
 IPTV client to download, search and play movies and TV series
 
-## Introduction into development thoughts on project start
-
-## Prerequisite 
+== Prerequisite 
 
 This application supported Operating Systems
 
@@ -13,55 +11,25 @@ This application supported Operating Systems
 
  For other linux distributions, you can build the application from source code.
 
- ## Deployment
+ 
+== Installation
 
-### Windows
-
-When building and deploying the application on Windows, we use `windeployqt` 
-to deploy the application. 
-
-We do that by running the following command in the terminal:
-
-[source,bash]
-windeployqt --release --no-translations --no-angle --no-opengl-sw --no-system-d3d-compiler --no-compiler-runtime --no-webkit2 --no-qml-debug grabtv.exe
-
-
-### Rocky Linux
-
-When building and deploying the application on Rocky Linux, we use `AppImage`
-
-We do that by running the following command in the terminal:
-
-[source,bash]
-appimagetool grabtv.AppDir grabtv.AppImage
-
-### Ubuntu
-
-When building and deploying the application on Ubuntu, we use `AppImage`
-
-We do that by running the following command in the terminal:
-
-[source,bash]
-appimagetool grabtv.AppDir grabtv.AppImage
-
-
-
-
-
-## Installation
-
-### Windows
+=== Windows
 
 To install the application on Windows, download the installer from the website and run it.
 
-### Rocky Linux
+=== Rocky Linux
 
 To install the application on Rocky Linux, download the AppImage from the website and run it.
 
-### Ubuntu
+=== Ubuntu
 
 To install the application on Ubuntu, download the AppImage from the website and run it.
 
+
+=== Development
+
+link:docs/development/index.adoc[Development Documentation]
 
 
 
