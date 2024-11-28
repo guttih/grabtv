@@ -2,8 +2,13 @@
 IPTV client to download, search and play movies and TV series
 
 
+
+
+
+## Prerequisite 
+
 This application supported Operating Systems
 
  * Windows 11
  * Rocky Linux release 9.4
-  * Ubuntu 22.04.5 LTS
+ * Ubuntu 22.04.5 LTS
