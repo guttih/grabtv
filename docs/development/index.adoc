@@ -1,0 +1,58 @@
+:doctitle: Development - {system-name}
+:author: Gudjon Holm
+:docinfo: shared
+:doctype: book
+:encoding: utf-8
+:lang: en
+:toc: left
+:toc-title: Table of Contents
+:toclevels: 3
+:numbered:
+:experimental:
+:xrefstyle: short
+:imagesdir: images
+:chapter-signifier:
+:system-name: Grab TV
+:stylesdir: ../styles
+:stylesheet: style.css
+
+= Development
+
+This document provides information on development practices and procedures for the project.
+
+== Deployment
+
+=== Windows
+
+When building and deploying the application on Windows, we use `windeployqt` 
+to deploy the application. 
+
+We do that by running the following command in the terminal:
+
+[source,bash]
+windeployqt --release --no-translations --no-angle --no-opengl-sw --no-system-d3d-compiler --no-compiler-runtime --no-webkit2 --no-qml-debug grabtv.exe
+
+
+=== Rocky Linux
+
+When building and deploying the application on Rocky Linux, we use `AppImage`
+
+We do that by running the following command in the terminal:
+
+[source,bash]
+appimagetool grabtv.AppDir grabtv.AppImage
+
+=== Ubuntu
+
+When building and deploying the application on Ubuntu, we use `AppImage`
+
+We do that by running the following command in the terminal:
+
+[source,bash]
+appimagetool grabtv.AppDir grabtv.AppImage
+
+
+
+
+
+include::developmentGit.adoc[]
