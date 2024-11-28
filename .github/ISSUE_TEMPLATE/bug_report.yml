@@ -90,8 +90,8 @@ body:
 - type: input
   id: os_other
   attributes:
-    label: Other operating system(s)
-    description: Operating system(s) not in the options above can be added here
+    label: Other operating system
+    description: Operating system not in the options above and/or more details about your OS
     placeholder: Other OS
 - type: textarea
   id: notes
