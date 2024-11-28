@@ -1,0 +1,81 @@
+:doctype: book
+:encoding: utf-8
+:lang: en
+:toc: left
+:toc-title: Table of Contents
+:toclevels: 3
+:numbered:
+:experimental:
+:xrefstyle: short
+:imagesdir: images
+:chapter-signifier:
+:system-name: Grab TV
+:stylesdir: ../styles
+:stylesheet: style.css
+
+== Git workflow
+
+When working with the Grab TV repository, it is important to follow the instructions described in this document. This helps keep the repository in a consistent state and ensures changes are properly reviewed before being merged into the main branch.
+
+=== Starting work on a new issue
+
+. Open the https://github.com/guttih/grabtv/issues[GitHub Issues page] and find an existing issue, or create a new one.
+.. If you are creating a new issue, describe the problem or the feature you're working on, specify whether it's a bug or a feature, and assign the issue to yourself.
+. Use the issue *number*, *type (feature or bug)*, and *title* to create a new branch.
++
+[source,shell]
+----
+git fetch
+git checkout -b <type>-<number>-<title> origin/master
+----
+.. For example, a feature with Id *12* and title *Search title in specific playlist* would be created as follows:
++
+[source,shell]
+----
+git fetch
+git checkout -b feature-12-search-title-in-specific-playlist origin/master
+----
+
+=== Making changes
+
+After making the necessary changes, commit them back to the branch. Make sure to draft a detailed commit message narrating what changes have been made and why.
+
+[source,shell]
+----
+git add .
+git commit -m "Add new feature"
+----
+
+=== Pushing changes
+
+Once committed, push the branch back to the remote repository. This avails the changes for review by other developers.
+
+[source,shell]
+----
+git push origin feature-12-search-title-in-specific-playlist
+----
+
+=== Creating a Pull Request
+
+After you have committed and pushed your changes to your branch, you can initiate a pull request.
+
+Here are the steps to create a pull request:
+
+. Following a successful `git push` command execution, either:
+
+    - Click on the *Compare & pull request* button that shows up on the GitHub repository page, or 
+    - Navigate manually to the GitHub repository to create a new pull request.
+
+. Locate and select your newly created branch in the *compare* dropdown.
+
+. To the right of your corresponding branch row, you'll see a button labeled _"Create pull request"_. Click this button.
+
+. A new page to create a pull request will open. Here, provide a title and a detailed description explaining your changes and why they are necessary.
+
+. Finally, click _Create pull request_.
+
+[NOTE]
+====
+Please review your own changes before you click the "Create a merge request" button. Also, consider when applicable to change to "Squash and merge" by clicking the dropdown arrow next to the "Create a merge request" button to keep the commit history as clean as possible.
+====
+
