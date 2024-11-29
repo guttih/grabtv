@@ -15,43 +15,93 @@
 :system-name: Grab TV
 :stylesdir: ../styles
 :stylesheet: style.css
+:git-repo: git@github.com:guttih/grabtv.git
 
 = Development
 
 This document provides information on development practices and procedures for the project.
 
+This project needs to be developed on a Linux distribution, such as Rocky Linux, Ubuntu, or other Linux distributions.
+Developing on window can only be done by using the Windows Subsystem for Linux (WSL) or a virtual machine.
+
+== Prerequisite
+
+The application supports the following Operating Systems:
+
+* Windows 11
+* Rocky Linux release 9.4
+* Ubuntu 22.04.5 LTS
+* Other Linux distributions (build from source code)
+
+To develop the application, you will require:
+
+. Desktop version of Qt 6.6 or later
+. CMake
+. A compatible C++ compiler (e.g., GCC, Clang, or MinGW on Windows)
+. Necessary dependencies based on your Linux distribution
+
+For developing the application on Rocky Linux 9, perform the following steps:
+
+. Install Qt6.6 Desktop version or later
+
 == Deployment
 
 === Windows
 
-When building and deploying the application on Windows, we use `windeployqt` 
-to deploy the application. 
+When building and deploying the application on Windows, use the `windeployqt` tool to bundle the required Qt libraries into the application directory.
 
-We do that by running the following command in the terminal:
-
-[source,bash]
-windeployqt --release --no-translations --no-angle --no-opengl-sw --no-system-d3d-compiler --no-compiler-runtime --no-webkit2 --no-qml-debug grabtv.exe
-
-
-=== Rocky Linux
-
-When building and deploying the application on Rocky Linux, we use `AppImage`
-
-We do that by running the following command in the terminal:
+Navigate to the build directory where your `grabtv.exe` is located, then run:
 
 [source,bash]
-appimagetool grabtv.AppDir grabtv.AppImage
+/path/to/Qt/Version/msvc2019_64/bin/windeployqt --release --no-translations --no-angle --no-opengl-sw --no-system-d3d-compiler --no-compiler-runtime --no-webkit --no-qml-debug grabtv.exe
 
-=== Ubuntu
+Please replace `/path/to/Qt/Version/msvc2019_64/bin/windeployqt` with the path to your `windeployqt.exe`.
 
-When building and deploying the application on Ubuntu, we use `AppImage`
+=== Rocky Linux, Ubuntu, and Other Linux Distributions
 
-We do that by running the following command in the terminal:
+// From AI
 
+=== Rocky Linux Preparations
+
+1. Install Development Tools:
 [source,bash]
-appimagetool grabtv.AppDir grabtv.AppImage
+----
+sudo dnf groupinstall "Development Tools"
+sudo dnf install cmake gcc-c++ mingw64-gcc-c++ sqlite
+----
 
+2. Install Qt:
+To install Qt in your Rocky Linux, it's recommended to go to the [Qt Official Download Page](https://www.qt.io/download), download the Open Source version and follow their installation guide.
 
+3. Clone the Repository:
+Navigate to the desired place in your filesystem and clone your repository, replacing `<Your repository URL>` with the URL of your repo.
+
+[source,bash, subs="attributes"]
+----
+git clone {git-repo}
+----
+
+4. Dependencies for Cross Compilation:
+This step is necessary if planning to compile your program for Windows OS.
+[source,bash]
+----
+sudo dnf install mingw64-qt5-qmake
+----
+
+== Building the Project
+
+Once that's set up, you can setup your working directory as follows:
+
+2. Create a new directory for the build and navigate into it and run the following commands:
+[source,bash]
+----
+mkdir -p build
+cd build
+cmake ..
+make
+----
+
+At the end of this process, you will have an executable file in your build directory.
 
 == Git workflow
 

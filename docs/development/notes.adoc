@@ -1,3 +1,42 @@
+== Notes
+
+Just some development notes, like commands and more.
+
+
+=== Commands
+
+
+.List all relevant files in the project
+[source,bash]
+find .  \( -path ./build -o -path ./.git -o -path ./.github \) -prune -o -print
+
+
+[gudjon@gudjon-krok ~/repos/personal/grabtv (feature-6-add-a-desktop-form >)]$ find .  \( -path ./build -o -path ./.git -o -path ./.github \) -prune -o -print
+.
+./LICENSE
+./dialogsearch.ui
+./README.adoc
+./.gitignore
+./main.cpp
+./dialogsearch.cpp
+./CMakeLists.txt
+./CMakeLists.txt.user
+./widgetsearch.h
+./dialogsearch.h
+./mainwindow.ui
+./mainwindow.h
+./docs
+./docs/styles
+./docs/styles/style.css
+./docs/styles/tern.css
+./docs/development
+./docs/development/developmentGit.adoc
+./docs/development/index.adoc
+./mainwindow.cpp
+./grabtv_is_IS.ts
+
+
+[gudjon@gudjon-krok ~/repos/personal/grabtv (feature-6-add-a-desktop-form *>)]$ cat CMakeLists.txt
 cmake_minimum_required(VERSION 3.5)
 
 project(grabtv VERSION 0.1 LANGUAGES CXX)
@@ -9,8 +48,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools Sql REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools Sql REQUIRED)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
 set(TS_FILES grabtv_is_IS.ts)
 
@@ -51,7 +90,7 @@ else()
     qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-target_link_libraries(grabtv PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Sql)
+target_link_libraries(grabtv PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
@@ -77,3 +116,4 @@ install(TARGETS grabtv
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(grabtv)
 endif()
+[gudjon@gudjon-krok ~/repos/personal/grabtv (feature-6-add-a-desktop-form *>)]$ 
